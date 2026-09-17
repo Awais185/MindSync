@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-white text-ink-900 font-sans antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 { @apply tracking-tight; }
+}
+
+@layer components {
+  .container-x { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-brand-500/40 focus:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700 shadow-soft;
+  }
+  .btn-ghost {
+    @apply btn bg-white text-ink-900 border border-slate-200 hover:border-brand-300 hover:text-brand-700;
+  }
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-50 text-brand-700 px-3 py-1 text-xs font-semibold tracking-wider uppercase;
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-slate-100 shadow-card;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
